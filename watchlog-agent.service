@@ -1,0 +1,13 @@
+[Unit]
+Description=Watchlog Agent
+After=network.target
+
+[Service]
+ExecStart=node /opt/watchlog-agent/src/watchlog-agent.js $apiKey $server $UUID
+WorkingDirectory=/opt/watchlog-agent/src
+Restart=always
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
